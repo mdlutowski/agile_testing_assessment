@@ -47,6 +47,7 @@ I'd actively participate in retrospective meetings to improve the testing proces
 Starting from sprint planning we should divide sprint backlog into 2 'virtual' parts: </br>
 - QA assignment needed for testing</br>
 - can be tested by developers</br>
+
 During daily stand-ups that division should be easily monitored & adjusted depends on devs & QA capacity.</br>
 Also in the middle of sprint it'd be nice to have a backlog refinement session to ensure the backlog contains the appropriate items prioritized not only by stakeholders requests, but also by team availability and capacity. </br>
 On a daily basis I focus on  performing the following activities: </br>
