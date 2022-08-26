@@ -17,7 +17,7 @@ As the single QA Engineer I would start by a meeting with PO and senior develope
   - are there any unit tests?</br>
     - if yes: are new features being covered simultaneously?
 
-In a perfect world, no story/defect should be marked as done with no QA testing. But of course, that's not possible for only one tester. </br>
+In a perfect world, no story/defect should be marked as done with no QA testing. But of course, that's not possible with only one tester. </br>
 I'd propose the following 'testing pyramid' based on the priority of QA action (from the highest): </br>
 - new features (stories) in core / vulnerable to regressions functionalities</br>
 - high priority customer issues</br>
@@ -38,7 +38,7 @@ Simultaneously to daily scrum activities & testing I'd book some slots for PoC o
 
 When participating daily stand-ups I'd try to give developers a hand during ticket testing with no QA assigned. If possible and needed, I could quickly join to ticket testing and perform some exploratory testing based on my experience. If needed I'd share good practices about writing unit tests and their coverage as well as manual testing. </br>
 Once upon a time when smoke tests are automated, I could inform a team and give a status about daily execution. </br>
-For transparency I'd suggest adding a new column to scrum board: **Testing failed**. Thanks to that, team members could easily identify functionalities that could not work as expected, but are already introduced to test environemnt.</b>
+For transparency I'd suggest adding a new column to scrum board: **Testing failed**. Thanks to that, team members could easily identify functionalities that could not work as expected, but are already introduced to test environemnt.</br>
 I'd actively participate in retrospective meetings to improve the testing process and discover gaps.
 
 
@@ -85,7 +85,7 @@ Based on the previous ideas. At the beginning of 4th sprint it would be nice to 
 - review what was merged during past 3 sprints</br>
 - what is not yet passing tests</br>
 - are any rollback needed</br>
-- review all tickets with no "Fix version", but in Testing/Failed Testing status</br>
+- review all tickets with no "Fix version", but in *Testing*/*Failed Testing* status</br>
 
 Testing activities should be performed in a dedicated environment with release candidates, free of untested tickets and unwanted merges. Against release environment we could run automed tests from QA framework, as well as perform e2e testing based on release content focusing on component integration if needed.</br>
 And I'd distinguish 2 **Done** statuses in tickets:</br>
