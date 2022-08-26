@@ -91,5 +91,6 @@ Testing activities should be performed in a dedicated environment with release c
 And I'd distinguish 2 **Done** statuses in tickets:</br>
 - Ready for Release (before release)</br>
 - Complete (after release)</br>
+
 That could make the process and tickets more understandable and transparent.</br>
 Perhaps some day the sprint 4th will no longer be the "hardening" sprint, but the usual one with extra release activities for only 2 members: Release Manager and QA Owner.
