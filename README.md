@@ -56,3 +56,40 @@ On a daily basis I focus on  performing the following activities: </br>
 - when no tickets assigned:</br>
   - adding existing features to automated scope by their priority</br>
   - supporting developers in testing on demand</br>
+
+
+## How would you optimize the release cycle, including the "hardening" sprint?
+
+First of all, I'd add a new field in tickets - **Fix version**.</br>
+Every ticket ready for testing (when feature branch is merged) should be updated with "Fix version" value, e.g. "release_v1.01".</br>
+Then I'd create a new board based on the current release version ("Fix version" == current release). Thanks to that, it would be easy to monitor the release scope and tickets status.</br>
+
+Secondly, I'd start using service tagging and maintaining product config.</br>
+Let's say that our product is built from the following layers (all kept in separate repositories):</br>
+- db</br>
+- UI platform</br>
+- API service 'A'</br>
+- API service 'B'</br>
+- ...</br>
+- API service 'Z'</br>
+
+Before the release if there are no blocking bugs related to service 'X', *master/develop* branch should be cut & serviced tag created. If service 'X' has blocking defects then the service should not be released. And all tickets related to this particular service should be moved to the next release by updating "Fix version".</br>
+Based on all tags we should maintain 3 version configs being used during instance/environment deployment:</br>
+- test - all tags set to latest</br>
+- production - services in tags released to production</br>
+- release - tags from production updated with new tags for services under release process</br>
+
+So we could release only tagged, ready services. Not all the product at once. So it would be easier in terms of failed tickets - no rollbacks needed.</br>
+
+Based on the previous ideas. At the beginning of 4th sprint it would be nice to have the release planning meeting in order to:</br>
+- review what was merged during past 3 sprints</br>
+- what is not yet passing tests</br>
+- are any rollback needed</br>
+- review all tickets with no "Fix version", but in Testing/Failed Testing status</br>
+
+Testing activities should be performed in a dedicated environment with release candidates, free of untested tickets and unwanted merges. Against release environment we could run automed tests from QA framework, as well as perform e2e testing based on release content focusing on component integration if needed.</br>
+And I'd distinguish 2 **Done** statuses in tickets:</br>
+- Ready for Release (before release)</br>
+- Complete (after release)</br>
+That could make the process and tickets more understandable and transparent.</br>
+Perhaps some day the sprint 4th will no longer be the "hardening" sprint, but the usual one with extra release activities for only 2 members: Release Manager and QA Owner.
